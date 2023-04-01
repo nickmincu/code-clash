@@ -3,7 +3,7 @@ import './style.css';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>Programming Language Comparison</h1>`;
+appDiv.innerHTML = `<h1>Programming Language Comparison .. by Nick M @2023</h1>`;
 
 document
   .getElementById('javascript')
@@ -69,7 +69,34 @@ function showComparison() {
             '<p>Please choose two different snippets.</p>';
         } else {
           document.getElementById('comparisonResult').innerHTML = `
-                  ... (rest of the comparison table)
+          <h3>${data[lang1].name} vs ${data[lang2].name}</h3>
+          <table>
+              <tr>
+                  <th>Attribute</th>
+                  <th>${data[lang1].name}</th>
+                  <th>${data[lang2].name}</th>
+              </tr>
+              <tr>
+                  <td>Performance</td>
+                  <td>${data[lang1].performance}</td>
+                  <td>${data[lang2].performance}</td>
+              </tr>
+              <tr>
+                  <td>Ease of Use</td>
+                  <td>${data[lang1].ease_of_use}</td>
+                  <td>${data[lang2].ease_of_use}</td>
+              </tr>
+              <tr>
+                  <td>Popularity</td>
+                  <td>${data[lang1].popularity}</td>
+                  <td>${data[lang2].popularity}</td>
+              </tr>
+              <tr>
+                  <td>Community Support</td>
+                  <td>${data[lang1].community_support}</td>
+                  <td>${data[lang2].community_support}</td>
+              </tr>
+          </table>
 
                   <h3>Code Snippet Comparison</h3>
                   <h4>${data[lang1].name} - ${data[lang1].snippets[snippetIndex1].title}</h4>
@@ -99,6 +126,10 @@ function showLanguage(language) {
     content.innerHTML = `
           <h2>${langData.name}</h2>
           <p>${langData.description}</p>
+          <p>Performance: ${langData.performance}</p>
+          <p>Ease of use:${langData.ease_of_use}</p>
+          <p>Popularity: ${langData.popularity}</p>
+          <p>Community Support: ${langData.community_support}</p>
           <label for="snippet">Choose a code snippet:</label>
           <select id="snippet">
               ${langData.snippets
