@@ -6,6 +6,9 @@ const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Programming Language Comparison</h1>`;
 
 document
+  .getElementById('javascript')
+  .addEventListener('click', () => showLanguage('javascript'));
+document
   .getElementById('dotnet')
   .addEventListener('click', () => showLanguage('dotnet'));
 document
@@ -17,110 +20,33 @@ document
 document.getElementById('compare').addEventListener('click', showComparison);
 
 function showComparison() {
-  fetchData().then(data => {
-      content.innerHTML = `
-          ...
-          <label for="snippet1">Snippet 1:</label>
-          <select id="snippet1">
-              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`).join('')}</optgroup>`).join('')}
-          </select>
-          <label for="snippet2">Snippet 2:</label>
-          <select id="snippet2">
-              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`).join('')}</optgroup>`).join('')}
-          </select>
-          <button id="compareBtn">Compare</button>
-          <div id="comparisonResult"></div>
-      `;
-
-      document.getElementById("compareBtn").addEventListener("click", function () {
-          const [lang1, snippetIndex1] = document.getElementById("snippet1").value.split("-");
-          const [lang2, snippetIndex2] = document.getElementById("snippet2").value.split("-");
-
-          if (lang1 === lang2 && snippetIndex1 === snippetIndex2) {
-              document.getElementById("comparisonResult").innerHTML = "<p>Please choose two different snippets.</p>";
-          } else {
-              document.getElementById("comparisonResult").innerHTML = `
-                  ... (rest of the comparison table)
-
-                  <h3>Code Snippet Comparison</h3>
-                  <h4>${data[lang1].name} - ${data[lang1].snippets[snippetIndex1].title}</h4>
-                  <pre>${data[lang1].snippets[snippetIndex1].code}</pre>
-                  <h4>${data[lang2].name} - ${data[lang2].snippets[snippetIndex2].title}</h4>
-                  <pre>${data[lang2].snippets[snippetIndex2].code}</pre>
-              `;
-          }
-      });
-  });
-}
-
-
-function showComparisonBak() {
-  fetchData().then(data => {
-      content.innerHTML =  `
-      <h2>Compare Languages</h2>
-      <label for="language1">Language 1:</label>
-      <select id="language1">
-          ${Object.keys(data)
-            .map(
-              (lang) =>
-                `<option value="${lang}">${data[lang].name}</option>`
-            )
-            .join('')}
-      </select>
-      <label for="language2">Language 2:</label>
-      <select id="language2">
-          ${Object.keys(data)
-            .map(
-              (lang) =>
-                `<option value="${lang}">${data[lang].name}</option>`
-            )
-            .join('')}
-      </select>
-      <button id="compareBtn">Compare</button>
-      <div id="comparisonResult"></div>
-  `;
-
-      document.getElementById("compareBtn").addEventListener("click", function () {
-          const lang1 = document.getElementById("language1").value;
-          const lang2 = document.getElementById("language2").value;
-
-          if (lang1 === lang2) {
-              document.getElementById("comparisonResult").innerHTML = "<p>Please choose two different languages.</p>";
-          } else {
-              document.getElementById("comparisonResult").innerHTML = `
-                  ... (rest of the comparison table)
-                  
-                  <h3>Code Snippet Comparison</h3>
-                  <h4>${data[lang1].name} - ${data[lang1].snippets[0].title}</h4>
-                  <pre>${data[lang1].snippets[0].code}</pre>
-                  <h4>${data[lang2].name} - ${data[lang2].snippets[0].title}</h4>
-                  <pre>${data[lang2].snippets[0].code}</pre>
-              `;
-          }
-      });
-  });
-}
-
-function showComparisonOld() {
-  console.log('show comparison');
   fetchData().then((data) => {
     content.innerHTML = `
-          <h2>Compare Languages</h2>
-          <label for="language1">Language 1:</label>
-          <select id="language1">
+          <label for="snippet1">Snippet 1:</label>
+          <select id="snippet1">
               ${Object.keys(data)
                 .map(
                   (lang) =>
-                    `<option value="${lang}">${data[lang].name}</option>`
+                    `<optgroup label="${data[lang].name}">${data[lang].snippets
+                      .map(
+                        (snippet, index) =>
+                          `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
+                      )
+                      .join('')}</optgroup>`
                 )
                 .join('')}
           </select>
-          <label for="language2">Language 2:</label>
-          <select id="language2">
+          <label for="snippet2">Snippet 2:</label>
+          <select id="snippet2">
               ${Object.keys(data)
                 .map(
                   (lang) =>
-                    `<option value="${lang}">${data[lang].name}</option>`
+                    `<optgroup label="${data[lang].name}">${data[lang].snippets
+                      .map(
+                        (snippet, index) =>
+                          `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
+                      )
+                      .join('')}</optgroup>`
                 )
                 .join('')}
           </select>
@@ -131,42 +57,25 @@ function showComparisonOld() {
     document
       .getElementById('compareBtn')
       .addEventListener('click', function () {
-        const lang1 = document.getElementById('language1').value;
-        const lang2 = document.getElementById('language2').value;
+        const [lang1, snippetIndex1] = document
+          .getElementById('snippet1')
+          .value.split('-');
+        const [lang2, snippetIndex2] = document
+          .getElementById('snippet2')
+          .value.split('-');
 
-        if (lang1 === lang2) {
+        if (lang1 === lang2 && snippetIndex1 === snippetIndex2) {
           document.getElementById('comparisonResult').innerHTML =
-            '<p>Please choose two different languages.</p>';
+            '<p>Please choose two different snippets.</p>';
         } else {
           document.getElementById('comparisonResult').innerHTML = `
-                  <h3>${data[lang1].name} vs ${data[lang2].name}</h3>
-                  <table>
-                      <tr>
-                          <th>Attribute</th>
-                          <th>${data[lang1].name}</th>
-                          <th>${data[lang2].name}</th>
-                      </tr>
-                      <tr>
-                          <td>Performance</td>
-                          <td>${data[lang1].performance}</td>
-                          <td>${data[lang2].performance}</td>
-                      </tr>
-                      <tr>
-                          <td>Ease of Use</td>
-                          <td>${data[lang1].ease_of_use}</td>
-                          <td>${data[lang2].ease_of_use}</td>
-                      </tr>
-                      <tr>
-                          <td>Popularity</td>
-                          <td>${data[lang1].popularity}</td>
-                          <td>${data[lang2].popularity}</td>
-                      </tr>
-                      <tr>
-                          <td>Community Support</td>
-                          <td>${data[lang1].community_support}</td>
-                          <td>${data[lang2].community_support}</td>
-                      </tr>
-                  </table>
+                  ... (rest of the comparison table)
+
+                  <h3>Code Snippet Comparison</h3>
+                  <h4>${data[lang1].name} - ${data[lang1].snippets[snippetIndex1].title}</h4>
+                  <pre>${data[lang1].snippets[snippetIndex1].code}</pre>
+                  <h4>${data[lang2].name} - ${data[lang2].snippets[snippetIndex2].title}</h4>
+                  <pre>${data[lang2].snippets[snippetIndex2].code}</pre>
               `;
         }
       });
