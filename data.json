@@ -1,0 +1,44 @@
+{
+  "dotnet": {
+    "name": "DotNet",
+    "description": "DotNet is a programming framework developed by Microsoft...",
+    "performance": "High",
+    "ease_of_use": "Medium",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "using System;\n\npublic class Program {\n    public static void Main() {\n        Console.WriteLine(\"Hello, World!\");\n    }\n}"
+      }
+    ]
+  },
+  "java": {
+    "name": "Java",
+    "description": "Java is a popular, versatile and platform-independent programming language...",
+    "performance": "High",
+    "ease_of_use": "Low",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}"
+      }
+    ]
+  },
+  "python": {
+    "name": "Python",
+    "description": "Python is a powerful, high-level, easy-to-learn programming language...",
+    "performance": "Medium",
+    "ease_of_use": "High",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "print(\"Hello, World!\")"
+      }
+    ]
+  }
+}
