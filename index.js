@@ -3,7 +3,7 @@ import './style.css';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h2>Programming Language Comparison</h2>`;
+appDiv.innerHTML = `<h2>Programming Languages Comparison</h2>`;
 
 document
   .getElementById('javascript')
@@ -17,6 +17,13 @@ document
 document
   .getElementById('python')
   .addEventListener('click', () => showLanguage('python'));
+  document
+  .getElementById('ruby')
+  .addEventListener('click', () => showLanguage('ruby'));
+  document
+  .getElementById('cpp')
+  .addEventListener('click', () => showLanguage('cpp'));  
+
 document.getElementById('compare').addEventListener('click', showComparison);
 
 function showComparison() {

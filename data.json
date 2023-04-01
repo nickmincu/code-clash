@@ -102,5 +102,49 @@
         "code": "def switch_case(x):\n    return {\n        0: \"x is zero\",\n        1: \"x is one\"\n    }.get(x, \"x is neither zero nor one\")\n\nx = 1\nprint(switch_case(x))"
       }
     ]
+  },
+  "ruby": {
+    "name": "Ruby",
+    "description": "Ruby is a dynamic, open-source programming language with a focus on simplicity and productivity...",
+    "performance": "Medium",
+    "ease_of_use": "High",
+    "popularity": "Medium",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "puts 'Hello, World!'"
+      },
+      {
+        "title": "For Loop",
+        "code": "10.times do |i|\n  puts i\nend"
+      },
+      {
+        "title": "If Statement",
+        "code": "x = 42\nif x > 0\n  puts 'x is positive'\nelse\n  puts 'x is not positive'\nend"
+      }
+    ]
+  },
+  "cpp": {
+    "name": "C++",
+    "description": "C++ is a general-purpose programming language created as an extension of the C programming language...",
+    "performance": "High",
+    "ease_of_use": "Low",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}"
+      },
+      {
+        "title": "For Loop",
+        "code": "#include <iostream>\n\nint main() {\n    for (int i = 0; i < 10; i++) {\n        std::cout << i << std::endl;\n    }\n    return 0;\n}"
+      },
+      {
+        "title": "If Statement",
+        "code": "#include <iostream>\n\nint main() {\n    int x = 42;\n    if (x > 0) {\n        std::cout << \"x is positive\" << std::endl;\n    } else {\n        std::cout << \"x is not positive\" << std::endl;\n    }\n    return 0;\n}"
+      }
+    ]
   }
 }
