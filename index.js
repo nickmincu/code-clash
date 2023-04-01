@@ -17,12 +17,12 @@ document
 document
   .getElementById('python')
   .addEventListener('click', () => showLanguage('python'));
-  document
+document
   .getElementById('ruby')
   .addEventListener('click', () => showLanguage('ruby'));
-  document
+document
   .getElementById('cpp')
-  .addEventListener('click', () => showLanguage('cpp'));  
+  .addEventListener('click', () => showLanguage('cpp'));
 
 document.getElementById('compare').addEventListener('click', showComparison);
 
@@ -128,7 +128,7 @@ function fetchData() {
 function showLanguage(language) {
   console.log('show language: ' + language);
   fetchData().then((data) => {
-    console.log(data);
+    // console.log(data);
     const langData = data[language];
     content.innerHTML = `
           <h2>${langData.name}</h2>
