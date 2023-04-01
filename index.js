@@ -3,7 +3,7 @@ import './style.css';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>Programming Language Comparison .. by Nick M @2023</h1>`;
+appDiv.innerHTML = `<h2>Programming Language Comparison</h2>`;
 
 document
   .getElementById('javascript')
@@ -154,3 +154,6 @@ function showLanguage(language) {
 document.addEventListener('DOMContentLoaded', function () {
   const content = document.getElementById('content');
 });
+
+// load the initial language page
+showLanguage('javascript');
