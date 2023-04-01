@@ -21,35 +21,26 @@ h4 {
   color: #ccc;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline;
-}
-
 nav {
   background-color: #333;
   text-align: center;
   padding: 1rem;
 }
 
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 nav a {
   color: #f4f4f4;
   text-decoration: none;
   margin: 0 1rem;
-  background-color: #444;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.3s;
 }
 
 nav a:hover {
-  background-color: #f7c924;
+  color: #f7c924;
 }
 
 #content {
@@ -92,6 +83,24 @@ select {
   margin-bottom: 1rem;
 }
 
+nav li {
+  display: inline;
+  margin: 0 0.5rem;
+}
+
+nav a#compare {
+  font-weight: bold;
+  color: #f7c924;
+}
+
+nav .spacer {
+  display: inline-block;
+  width: 1rem;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  color: #f7c924;
+}
+
 button {
   background-color: #f7c924;
   color: #222;
@@ -106,12 +115,34 @@ button:hover {
   color: #222;
 }
 
+/* Add a new rule for the footer */
 footer {
   background-color: #333;
   color: #f4f4f4;
-  text-align: center;
   padding: 1rem;
   position: fixed;
+  right: 0;
   bottom: 0;
-  width: 100%;
+}
+
+/* Add a new rule for the footer p element */
+footer p {
+  margin: 0;
+}
+
+/* responsive design */
+@media screen and (max-width: 768px) {
+  nav li {
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  label {
+    display: block;
+    width: auto;
+  }
 }
