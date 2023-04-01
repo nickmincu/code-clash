@@ -1,80 +1,106 @@
 {
+  "javascript": {
+    "name": "JavaScript",
+    "description": "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language...",
+    "performance": "Medium",
+    "ease_of_use": "High",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "console.log('Hello, World!');"
+      },
+      {
+        "title": "For Loop",
+        "code": "for (let i = 0; i < 10; i++) {\n    console.log(i);\n}"
+      },
+      {
+        "title": "If Statement",
+        "code": "let x = 42;\nif (x > 0) {\n    console.log('x is positive');\n} else {\n    console.log('x is not positive');\n}"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "let x = 1;\nswitch (x) {\n    case 0:\n        console.log('x is zero');\n        break;\n    case 1:\n        console.log('x is one');\n        break;\n    default:\n        console.log('x is neither zero nor one');\n        break;\n}"
+      }
+    ]
+  },
   "dotnet": {
-      "name": "DotNet",
-      "description": "DotNet is a programming framework developed by Microsoft...",
-      "performance": "High",
-      "ease_of_use": "Medium",
-      "popularity": "High",
-      "community_support": "High",
-      "snippets": [
-          {
-              "title": "Hello, World!",
-              "code": "using System;\n\npublic class Program {\n    public static void Main() {\n        Console.WriteLine(\"Hello, World!\");\n    }\n}"
-          },
-          {
-              "title": "For Loop",
-              "code": "for (int i = 0; i < 10; i++) {\n    Console.WriteLine(i);\n}"
-          },
-          {
-              "title": "If Statement",
-              "code": "int x = 42;\nif (x > 0) {\n    Console.WriteLine(\"x is positive\");\n} else {\n    Console.WriteLine(\"x is not positive\");\n}"
-          },
-          {
-              "title": "Switch Statement",
-              "code": "int x = 1;\nswitch (x) {\n    case 0:\n        Console.WriteLine(\"x is zero\");\n        break;\n    case 1:\n        Console.WriteLine(\"x is one\");\n        break;\n    default:\n        Console.WriteLine(\"x is neither zero nor one\");\n        break;\n}"
-          }
-      ]
+    "name": "DotNet",
+    "description": "DotNet is a programming framework developed by Microsoft...",
+    "performance": "High",
+    "ease_of_use": "Medium",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "using System;\n\npublic class Program {\n    public static void Main() {\n        Console.WriteLine(\"Hello, World!\");\n    }\n}"
+      },
+      {
+        "title": "For Loop",
+        "code": "for (int i = 0; i < 10; i++) {\n    Console.WriteLine(i);\n}"
+      },
+      {
+        "title": "If Statement",
+        "code": "int x = 42;\nif (x > 0) {\n    Console.WriteLine(\"x is positive\");\n} else {\n    Console.WriteLine(\"x is not positive\");\n}"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "int x = 1;\nswitch (x) {\n    case 0:\n        Console.WriteLine(\"x is zero\");\n        break;\n    case 1:\n        Console.WriteLine(\"x is one\");\n        break;\n    default:\n        Console.WriteLine(\"x is neither zero nor one\");\n        break;\n}"
+      }
+    ]
   },
   "java": {
-      "name": "Java",
-      "description": "Java is a popular, versatile and platform-independent programming language...",
-      "performance": "High",
-      "ease_of_use": "Medium",
-      "popularity": "High",
-      "community_support": "High",
-      "snippets": [
-          {
-              "title": "Hello, World!",
-              "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}"
-          },
-          {
-              "title": "For Loop",
-              "code": "for (int i = 0; i < 10; i++) {\n    System.out.println(i);\n}"
-          },
-          {
-              "title": "If Statement",
-              "code": "int x = 42;\nif (x > 0) {\n    System.out.println(\"x is positive\");\n} else {\n    System.out.println(\"x is not positive\");\n}"
-          },
-          {
-              "title": "Switch Statement",
-              "code": "int x = 1;\nswitch (x) {\n    case 0:\n        System.out.println(\"x is zero\");\n        break;\n    case 1:\n        System.out.println(\"x is one\");\n        break;\n    default:\n        System.out.println(\"x is neither zero nor one\");\n        break;\n}"
-          }
-      ]
+    "name": "Java",
+    "description": "Java is a popular, versatile and platform-independent programming language...",
+    "performance": "High",
+    "ease_of_use": "Medium",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}"
+      },
+      {
+        "title": "For Loop",
+        "code": "for (int i = 0; i < 10; i++) {\n    System.out.println(i);\n}"
+      },
+      {
+        "title": "If Statement",
+        "code": "int x = 42;\nif (x > 0) {\n    System.out.println(\"x is positive\");\n} else {\n    System.out.println(\"x is not positive\");\n}"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "int x = 1;\nswitch (x) {\n    case 0:\n        System.out.println(\"x is zero\");\n        break;\n    case 1:\n        System.out.println(\"x is one\");\n        break;\n    default:\n        System.out.println(\"x is neither zero nor one\");\n        break;\n}"
+      }
+    ]
   },
   "python": {
-      "name": "Python",
-      "description": "Python is a powerful, high-level, easy-to-learn programming language...",
-      "performance": "Medium",
-      "ease_of_use": "High",
-      "popularity": "High",
-      "community_support": "High",
-      "snippets": [
-          {
-              "title": "Hello, World!",
-              "code": "print(\"Hello, World!\")"
-          },
-          {
-              "title": "For Loop",
-              "code": "for i in range(10):\n    print(i)"
-          },
-          {
-              "title": "If Statement",
-              "code": "x = 42\nif x > 0:\n    print(\"x is positive\")\nelse:\n    print(\"x is not positive\")"
-          },
-          {
-              "title": "Switch Statement",
-              "code": "def switch_case(x):\n    return {\n        0: \"x is zero\",\n        1: \"x is one\"\n    }.get(x, \"x is neither zero nor one\")\n\nx = 1\nprint(switch_case(x))"
-          }
-      ]
+    "name": "Python",
+    "description": "Python is a powerful, high-level, easy-to-learn programming language...",
+    "performance": "Medium",
+    "ease_of_use": "High",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "print(\"Hello, World!\")"
+      },
+      {
+        "title": "For Loop",
+        "code": "for i in range(10):\n    print(i)"
+      },
+      {
+        "title": "If Statement",
+        "code": "x = 42\nif x > 0:\n    print(\"x is positive\")\nelse:\n    print(\"x is not positive\")"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "def switch_case(x):\n    return {\n        0: \"x is zero\",\n        1: \"x is one\"\n    }.get(x, \"x is neither zero nor one\")\n\nx = 1\nprint(switch_case(x))"
+      }
+    ]
   }
 }

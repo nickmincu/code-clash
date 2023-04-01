@@ -22,11 +22,11 @@ function showComparison() {
           ...
           <label for="snippet1">Snippet 1:</label>
           <select id="snippet1">
-              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${snippet.title}</option>`).join('')}</optgroup>`).join('')}
+              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`).join('')}</optgroup>`).join('')}
           </select>
           <label for="snippet2">Snippet 2:</label>
           <select id="snippet2">
-              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${snippet.title}</option>`).join('')}</optgroup>`).join('')}
+              ${Object.keys(data).map(lang => `<optgroup label="${data[lang].name}">${data[lang].snippets.map((snippet, index) => `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`).join('')}</optgroup>`).join('')}
           </select>
           <button id="compareBtn">Compare</button>
           <div id="comparisonResult"></div>
