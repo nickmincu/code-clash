@@ -83,10 +83,10 @@ function showComparison() {
                   .join('')}
             </select>
           </div>
-          <!-- <label for="snippet2">Snippet 2:</label> -->
+          <!-- <label for="snippet2"> vs</label> -->
           <div class="select-wrapper">
             <select id="snippet2">
-                ${Object.keys(data)
+                ${Object.keys(data)                  
                   .map(
                     (lang) =>
                       `<optgroup label="${data[lang].name}">${data[
@@ -101,13 +101,11 @@ function showComparison() {
                   .join('')}
             </select>
           </div>
-          <button id="compareBtn">Compare</button>
+        <!--  <button id="compareBtn">Compare</button> -->
           <div id="comparisonResult"></div>
       `;
 
-    document
-      .getElementById('compareBtn')
-      .addEventListener('click', function () {
+      function compare() {
         const [lang1, snippetIndex1] = document
           .getElementById('snippet1')
           .value.split('-');
@@ -156,7 +154,27 @@ function showComparison() {
                   <pre>${data[lang2].snippets[snippetIndex2].code}</pre>
               `;
         }
-      });
+      }
+
+    // document
+    //   .getElementById('compareBtn')
+    //   .addEventListener('click', () => compare());
+
+      const secondLanguageKey = Object.keys(data)[1];
+      const secondLanguageFirstChoiceIndex = data[secondLanguageKey].snippets.length
+     
+      const comboBox1 = document.getElementById("snippet1");
+      comboBox1.selectedIndex = 2;      
+      const comboBox2 = document.getElementById("snippet2");
+      comboBox2.selectedIndex = secondLanguageFirstChoiceIndex + comboBox1.selectedIndex;
+
+      comboBox1.addEventListener("change", () =>  compare())
+      comboBox2.addEventListener("change", () =>  compare())
+
+      compare();
+
+      //document.getElementById('compareBtn').click();
+
   });
 }
 
