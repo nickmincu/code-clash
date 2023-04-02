@@ -14,7 +14,12 @@ function generateNavMenu() {
       const link = document.createElement('a');
       link.href = '#';
       link.textContent = data[lang].name;
-      link.addEventListener('click', () => showLanguage(lang));
+      link.id = lang;
+      link.addEventListener('click', () => {
+        showLanguage(lang);
+        setActiveButton(lang);
+      });
+
       listItem.appendChild(link);
       navList.appendChild(listItem);
     });
@@ -31,11 +36,39 @@ function generateNavMenu() {
     compareLink.href = '#';
     compareLink.textContent = 'Compare';
     compareLink.id = 'compare';
-    compareLink.addEventListener('click', showComparison);
+    compareLink.addEventListener('click', () => {
+      showComparison();
+      setActiveButton('compare');
+    });
     compareListItem.appendChild(compareLink);
     navList.appendChild(compareListItem);
 
     document.querySelector('nav').appendChild(navList);
+  });
+}
+
+function setActiveButton(buttonId) {
+  const buttons = [
+    'javascript',
+    'dotnet',
+    'java',
+    'python',
+    'ruby',
+    'cpp',
+    'compare',
+  ];
+
+  buttons.forEach((id) => {
+    const button = document.getElementById(id);
+    if (button) {
+      if (id === buttonId) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    } else {
+      console.error(`Button with ID "${id}" not found.`);
+    }
   });
 }
 
@@ -86,7 +119,7 @@ function showComparison() {
           <!-- <label for="snippet2"> vs</label> -->
           <div class="select-wrapper">
             <select id="snippet2">
-                ${Object.keys(data)                  
+                ${Object.keys(data)
                   .map(
                     (lang) =>
                       `<optgroup label="${data[lang].name}">${data[
@@ -105,19 +138,19 @@ function showComparison() {
           <div id="comparisonResult"></div>
       `;
 
-      function compare() {
-        const [lang1, snippetIndex1] = document
-          .getElementById('snippet1')
-          .value.split('-');
-        const [lang2, snippetIndex2] = document
-          .getElementById('snippet2')
-          .value.split('-');
+    function compare() {
+      const [lang1, snippetIndex1] = document
+        .getElementById('snippet1')
+        .value.split('-');
+      const [lang2, snippetIndex2] = document
+        .getElementById('snippet2')
+        .value.split('-');
 
-        if (lang1 === lang2 && snippetIndex1 === snippetIndex2) {
-          document.getElementById('comparisonResult').innerHTML =
-            '<p>Please choose two different snippets.</p>';
-        } else {
-          document.getElementById('comparisonResult').innerHTML = `
+      if (lang1 === lang2 && snippetIndex1 === snippetIndex2) {
+        document.getElementById('comparisonResult').innerHTML =
+          '<p>Please choose two different snippets.</p>';
+      } else {
+        document.getElementById('comparisonResult').innerHTML = `
           <h3>${data[lang1].name} vs ${data[lang2].name}</h3>
           <table>
               <tr>
@@ -153,28 +186,29 @@ function showComparison() {
                   <h4>${data[lang2].name} - ${data[lang2].snippets[snippetIndex2].title}</h4>
                   <pre>${data[lang2].snippets[snippetIndex2].code}</pre>
               `;
-        }
       }
+    }
 
     // document
     //   .getElementById('compareBtn')
     //   .addEventListener('click', () => compare());
 
-      const secondLanguageKey = Object.keys(data)[1];
-      const secondLanguageFirstChoiceIndex = data[secondLanguageKey].snippets.length
-     
-      const comboBox1 = document.getElementById("snippet1");
-      comboBox1.selectedIndex = 2;      
-      const comboBox2 = document.getElementById("snippet2");
-      comboBox2.selectedIndex = secondLanguageFirstChoiceIndex + comboBox1.selectedIndex;
+    const secondLanguageKey = Object.keys(data)[1];
+    const secondLanguageFirstChoiceIndex =
+      data[secondLanguageKey].snippets.length;
 
-      comboBox1.addEventListener("change", () =>  compare())
-      comboBox2.addEventListener("change", () =>  compare())
+    const comboBox1 = document.getElementById('snippet1');
+    comboBox1.selectedIndex = 2;
+    const comboBox2 = document.getElementById('snippet2');
+    comboBox2.selectedIndex =
+      secondLanguageFirstChoiceIndex + comboBox1.selectedIndex;
 
-      compare();
+    comboBox1.addEventListener('change', () => compare());
+    comboBox2.addEventListener('change', () => compare());
 
-      //document.getElementById('compareBtn').click();
+    compare();
 
+    //document.getElementById('compareBtn').click();
   });
 }
 
