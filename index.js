@@ -17,7 +17,7 @@ function generateNavMenu() {
       link.id = lang;
       link.addEventListener('click', () => {
         showLanguage(lang);
-        setActiveButton(lang);
+        // setActiveButton(lang);
       });
 
       listItem.appendChild(link);
@@ -222,6 +222,7 @@ function fetchData() {
 }
 
 function showLanguage(language) {
+  setActiveButton(language);
   console.log('show language: ' + language);
   fetchData().then((data) => {
     // console.log(data);
