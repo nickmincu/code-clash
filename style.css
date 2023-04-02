@@ -76,20 +76,6 @@ label {
   width: 100px;
 }
 
-/* select {
-  margin-bottom: 1rem;
-} */
-
-/* select {
-  font-size: 16px;
-  padding: 8px; 
-  background-color: #444;
-  border: 1px solid #f4f4f4;
-  border-radius: 4px; 
-  color: #f4f4f4; 
-  appearance: none; 
-} */
-
 .select-wrapper {
   position: relative;
   display: inline-block;
@@ -134,7 +120,7 @@ nav li {
 
 nav a#compare {
   font-weight: bold;
-  color: #f7c924;
+  /* color: #f7c924; */
 }
 
 nav .spacer {
