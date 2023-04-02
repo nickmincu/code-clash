@@ -10,6 +10,7 @@ body {
 h2 {
   color: #f7c924;
   text-align: center;
+  font-size: larger;
 }
 
 h3 {
@@ -180,7 +181,6 @@ footer p {
   }
 } */
 
-
 .hamburger-menu {
   display: none;
   cursor: pointer;
@@ -197,7 +197,6 @@ footer p {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-  
   nav li {
     display: block;
   }
@@ -213,14 +212,14 @@ footer p {
   }
 
   nav ul {
-      display: none;
+    display: none;
   }
 
   .hamburger-menu {
-      display: block;
+    display: block;
   }
 
   nav.show-menu ul {
-      display: block;
+    display: block;
   }
 }
