@@ -172,5 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const content = document.getElementById('content');
 });
 
+document.querySelector(".hamburger-menu").addEventListener("click", function () {
+  document.querySelector("nav").classList.toggle("show-menu");
+});
+
 // load the initial language page
 showLanguage('javascript');
