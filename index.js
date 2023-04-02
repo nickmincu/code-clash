@@ -5,39 +5,37 @@ import './style.css';
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h2>Programming Languages Comparison</h2>`;
 
-
 function generateNavMenu() {
-  fetchData().then(data => {
-      const navList = document.createElement("ul");
+  fetchData().then((data) => {
+    const navList = document.createElement('ul');
 
-      Object.keys(data).forEach(lang => {
-          const listItem = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = "#";
-          link.textContent = data[lang].name;
-          link.addEventListener("click", () => showLanguage(lang));
-          listItem.appendChild(link);
-          navList.appendChild(listItem);
-      });
+    Object.keys(data).forEach((lang) => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = '#';
+      link.textContent = data[lang].name;
+      link.addEventListener('click', () => showLanguage(lang));
+      listItem.appendChild(link);
+      navList.appendChild(listItem);
+    });
 
+    const spacer = document.createElement('li');
+    const span = document.createElement('span');
+    span.className = 'spacer';
+    span.textContent = '·';
+    spacer.appendChild(span);
+    navList.appendChild(spacer);
 
-      const spacer = document.createElement("li");
-      const span = document.createElement("span");
-      span.className = "spacer";
-      span.textContent = "·";
-      spacer.appendChild(span);
-      navList.appendChild(spacer);
+    const compareListItem = document.createElement('li');
+    const compareLink = document.createElement('a');
+    compareLink.href = '#';
+    compareLink.textContent = 'Compare';
+    compareLink.id = 'compare';
+    compareLink.addEventListener('click', showComparison);
+    compareListItem.appendChild(compareLink);
+    navList.appendChild(compareListItem);
 
-      const compareListItem = document.createElement("li");
-      const compareLink = document.createElement("a");
-      compareLink.href = "#";
-      compareLink.textContent = "Compare";
-      compareLink.id = "compare";
-      compareLink.addEventListener("click", showComparison);
-      compareListItem.appendChild(compareLink);
-      navList.appendChild(compareListItem);
-
-      document.querySelector("nav").appendChild(navList);
+    document.querySelector('nav').appendChild(navList);
   });
 }
 
@@ -67,7 +65,7 @@ generateNavMenu();
 function showComparison() {
   fetchData().then((data) => {
     content.innerHTML = `
-          <label for="snippet1">Snippet 1:</label>
+          <label for="snippet1">Languages</label>
           <div class="select-wrapper">
             <select id="snippet1">
                 ${Object.keys(data)
@@ -85,7 +83,7 @@ function showComparison() {
                   .join('')}
             </select>
           </div>
-          <label for="snippet2">Snippet 2:</label>
+          <!-- <label for="snippet2">Snippet 2:</label> -->
           <div class="select-wrapper">
             <select id="snippet2">
                 ${Object.keys(data)
@@ -210,9 +208,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const content = document.getElementById('content');
 });
 
-document.querySelector(".hamburger-menu").addEventListener("click", function () {
-  document.querySelector("nav").classList.toggle("show-menu");
-});
+document
+  .querySelector('.hamburger-menu')
+  .addEventListener('click', function () {
+    document.querySelector('nav').classList.toggle('show-menu');
+  });
 
 // load the initial language page
 showLanguage('javascript');
