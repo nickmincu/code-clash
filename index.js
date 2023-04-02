@@ -8,13 +8,18 @@ appDiv.innerHTML = `<h2>Programming Languages Comparison</h2>`;
 function generateNavMenu() {
   fetchData().then((data) => {
     const navList = document.createElement('ul');
-
+    var i = 0;
     Object.keys(data).forEach((lang) => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
       link.href = '#';
       link.textContent = data[lang].name;
       link.id = lang;
+      if (i == 0)
+      {
+        link.className += "active";
+      }
+      i++;
       link.addEventListener('click', () => {
         showLanguage(lang);
         // setActiveButton(lang);
@@ -73,27 +78,6 @@ function setActiveButton(buttonId) {
 }
 
 generateNavMenu();
-
-// document
-//   .getElementById('javascript')
-//   .addEventListener('click', () => showLanguage('javascript'));
-// document
-//   .getElementById('dotnet')
-//   .addEventListener('click', () => showLanguage('dotnet'));
-// document
-//   .getElementById('java')
-//   .addEventListener('click', () => showLanguage('java'));
-// document
-//   .getElementById('python')
-//   .addEventListener('click', () => showLanguage('python'));
-// document
-//   .getElementById('ruby')
-//   .addEventListener('click', () => showLanguage('ruby'));
-// document
-//   .getElementById('cpp')
-//   .addEventListener('click', () => showLanguage('cpp'));
-
-// document.getElementById('compare').addEventListener('click', showComparison);
 
 function showComparison() {
   fetchData().then((data) => {
