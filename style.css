@@ -1,4 +1,3 @@
-/* General Styling */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -54,7 +53,6 @@ pre {
   border-radius: 5px;
 }
 
-/* Comparison Table */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -73,7 +71,6 @@ th {
   font-weight: bold;
 }
 
-/* Form Elements */
 label {
   display: inline-block;
   width: 100px;
@@ -115,17 +112,15 @@ button:hover {
   color: #222;
 }
 
-/* Add a new rule for the footer */
 footer {
-  background-color: #333;
-  color: #f4f4f4;
+  background-color: rgba(51, 51, 51, 0.4);
+  color: rgba(91, 91, 91, 0.8);
   padding: 1rem;
   position: fixed;
   right: 0;
   bottom: 0;
 }
 
-/* Add a new rule for the footer p element */
 footer p {
   margin: 0;
 }
