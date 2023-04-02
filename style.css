@@ -80,7 +80,6 @@ label {
   margin-bottom: 1rem;
 } */
 
-
 /* select {
   font-size: 16px;
   padding: 8px; 
@@ -91,10 +90,30 @@ label {
   appearance: none; 
 } */
 
-/* Style the select element */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  top: 0.1rem;
+  right: 0.6rem;
+  bottom: 0.3rem;
+  padding: 0 0.2rem;
+  background: #444;
+  pointer-events: none;
+  font-size: 1rem;
+  color: #f4f4f4;
+  line-height: 2.2;
+}
+
 select {
-  /* appearance: none;
-  -webkit-appearance: none; */
+  appearance: none;
+  -webkit-appearance: none;
   -moz-appearance: none;
   background-color: #444;
   border: 1px solid #666;
@@ -105,31 +124,7 @@ select {
   cursor: pointer;
   outline: none;
   width: 100%;
-  max-width: 300px;
   box-sizing: border-box;
-}
-
-/* Add a custom dropdown arrow */
-select::-ms-expand {
-  display: none;
-}
-
-select::after {
-  content: "▼";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1.25rem;
-  background: #444;
-  pointer-events: none;
-  font-size: 1.25rem;
-  color: #f4f4f4;
-}
-
-/* Hide the default dropdown arrow in Webkit-based browsers */
-select::-webkit-scrollbar {
-  display: none;
 }
 
 nav li {

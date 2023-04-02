@@ -30,33 +30,41 @@ function showComparison() {
   fetchData().then((data) => {
     content.innerHTML = `
           <label for="snippet1">Snippet 1:</label>
-          <select id="snippet1">
-              ${Object.keys(data)
-                .map(
-                  (lang) =>
-                    `<optgroup label="${data[lang].name}">${data[lang].snippets
-                      .map(
-                        (snippet, index) =>
-                          `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
-                      )
-                      .join('')}</optgroup>`
-                )
-                .join('')}
-          </select>
+          <div class="select-wrapper">
+            <select id="snippet1">
+                ${Object.keys(data)
+                  .map(
+                    (lang) =>
+                      `<optgroup label="${data[lang].name}">${data[
+                        lang
+                      ].snippets
+                        .map(
+                          (snippet, index) =>
+                            `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
+                        )
+                        .join('')}</optgroup>`
+                  )
+                  .join('')}
+            </select>
+          </div>
           <label for="snippet2">Snippet 2:</label>
-          <select id="snippet2">
-              ${Object.keys(data)
-                .map(
-                  (lang) =>
-                    `<optgroup label="${data[lang].name}">${data[lang].snippets
-                      .map(
-                        (snippet, index) =>
-                          `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
-                      )
-                      .join('')}</optgroup>`
-                )
-                .join('')}
-          </select>
+          <div class="select-wrapper">
+            <select id="snippet2">
+                ${Object.keys(data)
+                  .map(
+                    (lang) =>
+                      `<optgroup label="${data[lang].name}">${data[
+                        lang
+                      ].snippets
+                        .map(
+                          (snippet, index) =>
+                            `<option value="${lang}-${index}">${data[lang].name} - ${snippet.title}</option>`
+                        )
+                        .join('')}</optgroup>`
+                  )
+                  .join('')}
+            </select>
+          </div>
           <button id="compareBtn">Compare</button>
           <div id="comparisonResult"></div>
       `;
@@ -138,6 +146,7 @@ function showLanguage(language) {
           <p>Popularity: ${langData.popularity}</p>
           <p>Community Support: ${langData.community_support}</p>
           <label for="snippet">Choose a code snippet:</label>
+          <div class="select-wrapper">
           <select id="snippet">
               ${langData.snippets
                 .map(
@@ -146,6 +155,7 @@ function showLanguage(language) {
                 )
                 .join('')}
           </select>
+          </div>
           <pre id="snippetCode">${langData.snippets[0].code}</pre>`;
 
     document
