@@ -5,26 +5,64 @@ import './style.css';
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h2>Programming Languages Comparison</h2>`;
 
-document
-  .getElementById('javascript')
-  .addEventListener('click', () => showLanguage('javascript'));
-document
-  .getElementById('dotnet')
-  .addEventListener('click', () => showLanguage('dotnet'));
-document
-  .getElementById('java')
-  .addEventListener('click', () => showLanguage('java'));
-document
-  .getElementById('python')
-  .addEventListener('click', () => showLanguage('python'));
-document
-  .getElementById('ruby')
-  .addEventListener('click', () => showLanguage('ruby'));
-document
-  .getElementById('cpp')
-  .addEventListener('click', () => showLanguage('cpp'));
 
-document.getElementById('compare').addEventListener('click', showComparison);
+function generateNavMenu() {
+  fetchData().then(data => {
+      const navList = document.createElement("ul");
+
+      Object.keys(data).forEach(lang => {
+          const listItem = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = "#";
+          link.textContent = data[lang].name;
+          link.addEventListener("click", () => showLanguage(lang));
+          listItem.appendChild(link);
+          navList.appendChild(listItem);
+      });
+
+
+      const spacer = document.createElement("li");
+      const span = document.createElement("span");
+      span.className = "spacer";
+      span.textContent = "·";
+      spacer.appendChild(span);
+      navList.appendChild(spacer);
+
+      const compareListItem = document.createElement("li");
+      const compareLink = document.createElement("a");
+      compareLink.href = "#";
+      compareLink.textContent = "Compare";
+      compareLink.id = "compare";
+      compareLink.addEventListener("click", showComparison);
+      compareListItem.appendChild(compareLink);
+      navList.appendChild(compareListItem);
+
+      document.querySelector("nav").appendChild(navList);
+  });
+}
+
+generateNavMenu();
+
+// document
+//   .getElementById('javascript')
+//   .addEventListener('click', () => showLanguage('javascript'));
+// document
+//   .getElementById('dotnet')
+//   .addEventListener('click', () => showLanguage('dotnet'));
+// document
+//   .getElementById('java')
+//   .addEventListener('click', () => showLanguage('java'));
+// document
+//   .getElementById('python')
+//   .addEventListener('click', () => showLanguage('python'));
+// document
+//   .getElementById('ruby')
+//   .addEventListener('click', () => showLanguage('ruby'));
+// document
+//   .getElementById('cpp')
+//   .addEventListener('click', () => showLanguage('cpp'));
+
+// document.getElementById('compare').addEventListener('click', showComparison);
 
 function showComparison() {
   fetchData().then((data) => {
