@@ -131,6 +131,10 @@
       {
         "title": "If Statement",
         "code": "x = 42\nif x > 0\n  puts 'x is positive'\nelse\n  puts 'x is not positive'\nend"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "todo"
       }
     ]
   },
@@ -154,6 +158,10 @@
       {
         "title": "If Statement",
         "code": "#include <iostream>\n\nint main() {\n    int x = 42;\n    if (x > 0) {\n        std::cout << \"x is positive\" << std::endl;\n    } else {\n        std::cout << \"x is not positive\" << std::endl;\n    }\n    return 0;\n}"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "todo"
       }
     ]
   },
@@ -168,15 +176,19 @@
     "snippets": [
       {
         "title": "Hello, World!",
-        "code": "todo"
+        "code": "fn main() {\n    println!(\"Hello, world!\");\n}"
       },
       {
         "title": "For Loop",
-        "code": "todo"
+        "code": "fn main() {\n    let numbers = [1, 2, 3, 4, 5];\n\n    for number in numbers.iter() {\n        println!(\"The number is {}\", number);\n    }\n}",
       },
       {
         "title": "If Statement",
-        "code": "todo"
+        "code": "fn main() {\n    let number = 5;\n\n    if number < 10 {\n        println!(\"The number is less than 10\");\n    } else {\n        println!(\"The number is greater than or equal to 10\");\n    }\n}"
+      },
+      {
+        "title": "Switch Statement",
+        "code": "fn main() {\n    let number = 2;\n\n    match number {\n        1 => println!(\"The number is one\"),\n        2 => println!(\"The number is two\"),\n        3 => println!(\"The number is three\"),\n        _ => println!(\"The number is something else\"),\n    }\n}"
       }
     ]
   }
