@@ -168,7 +168,7 @@
   "rust": {
     "name": "Rust",
     "wiki": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
-    "description": "Rust is...",
+    "description": "Rust is a multi-paradigm, high-level, general-purpose programming language. Rust emphasizes performance, type safety, and concurrency. Rust enforces memory safety—that is, that all references point to valid memory—without requiring the use of a garbage collector or reference counting present in other memory-safe languages.",
     "performance": "High",
     "ease_of_use": "Low",
     "popularity": "High",
