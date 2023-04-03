@@ -214,7 +214,7 @@ function showLanguage(language) {
     content.innerHTML = `
           <h2>${langData.name}</h2>
           <p>${langData.description}</p>
-          <a class="pretty_link" href="${langData.wiki}" target="_blank">Link text</a>
+          <a class="pretty_link" href="${langData.wiki}" target="_blank">Wikipedia link</a>
           <p>Performance: ${langData.performance}</p>
           <p>Ease of use:${langData.ease_of_use}</p>
           <p>Popularity: ${langData.popularity}</p>
