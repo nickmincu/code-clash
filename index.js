@@ -198,7 +198,7 @@ function showComparison() {
 
 function fetchData() {
   console.log('fetch data');
-  return fetch(
+  return fetch(    
     'https://raw.githubusercontent.com/nickmincu/code-clash/main/data.json'
   )
     .then((response) => response.json())

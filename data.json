@@ -146,5 +146,27 @@
         "code": "#include <iostream>\n\nint main() {\n    int x = 42;\n    if (x > 0) {\n        std::cout << \"x is positive\" << std::endl;\n    } else {\n        std::cout << \"x is not positive\" << std::endl;\n    }\n    return 0;\n}"
       }
     ]
+  },
+  "rust": {
+    "name": "Rust",
+    "description": "Rust is...",
+    "performance": "High",
+    "ease_of_use": "Low",
+    "popularity": "High",
+    "community_support": "High",
+    "snippets": [
+      {
+        "title": "Hello, World!",
+        "code": "todo"
+      },
+      {
+        "title": "For Loop",
+        "code": "todo"
+      },
+      {
+        "title": "If Statement",
+        "code": "todo"
+      }
+    ]
   }
 }
