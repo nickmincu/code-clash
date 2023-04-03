@@ -1,6 +1,7 @@
 {
   "javascript": {
     "name": "JavaScript",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language...",
     "performance": "Medium",
     "ease_of_use": "High",
@@ -27,6 +28,7 @@
   },
   "dotnet": {
     "name": "DotNet",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "DotNet is a programming framework developed by Microsoft...",
     "performance": "High",
     "ease_of_use": "Medium",
@@ -53,6 +55,7 @@
   },
   "java": {
     "name": "Java",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "Java is a popular, versatile and platform-independent programming language...",
     "performance": "High",
     "ease_of_use": "Medium",
@@ -79,6 +82,7 @@
   },
   "python": {
     "name": "Python",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "Python is a powerful, high-level, easy-to-learn programming language...",
     "performance": "Medium",
     "ease_of_use": "High",
@@ -105,6 +109,7 @@
   },
   "ruby": {
     "name": "Ruby",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "Ruby is a dynamic, open-source programming language with a focus on simplicity and productivity...",
     "performance": "Medium",
     "ease_of_use": "High",
@@ -127,6 +132,7 @@
   },
   "cpp": {
     "name": "C++",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "C++ is a general-purpose programming language created as an extension of the C programming language...",
     "performance": "High",
     "ease_of_use": "Low",
@@ -149,6 +155,7 @@
   },
   "rust": {
     "name": "Rust",
+    "wiki": "https://en.wikipedia.org/wiki/JavaScript",
     "description": "Rust is...",
     "performance": "High",
     "ease_of_use": "Low",
