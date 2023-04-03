@@ -15,9 +15,8 @@ function generateNavMenu() {
       link.href = '#';
       link.textContent = data[lang].name;
       link.id = lang;
-      if (i == 0)
-      {
-        link.className += "active";
+      if (i == 0) {
+        link.className += 'active';
       }
       i++;
       link.addEventListener('click', () => {
@@ -60,6 +59,7 @@ function setActiveButton(buttonId) {
     'python',
     'ruby',
     'cpp',
+    'rust',
     'compare',
   ];
 
@@ -198,7 +198,7 @@ function showComparison() {
 
 function fetchData() {
   console.log('fetch data');
-  return fetch(    
+  return fetch(
     'https://raw.githubusercontent.com/nickmincu/code-clash/main/data.json'
   )
     .then((response) => response.json())
@@ -214,6 +214,7 @@ function showLanguage(language) {
     content.innerHTML = `
           <h2>${langData.name}</h2>
           <p>${langData.description}</p>
+          <a class="pretty_link" href="${langData.wiki}" target="_blank">Link text</a>
           <p>Performance: ${langData.performance}</p>
           <p>Ease of use:${langData.ease_of_use}</p>
           <p>Popularity: ${langData.popularity}</p>

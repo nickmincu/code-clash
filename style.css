@@ -27,6 +27,12 @@ nav {
   padding: 1rem;
 }
 
+
+.pretty_link {
+  font-size: x-large;
+  color: #6fd312;
+}
+
 /* nav li {
   display: inline-block;
   margin-right: 1rem;
@@ -208,7 +214,7 @@ footer p {
     display: block;
   }
 
-  pre{
+  pre {
     font-size: xx-small;
   }
 
